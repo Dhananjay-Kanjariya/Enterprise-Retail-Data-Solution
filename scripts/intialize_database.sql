@@ -1,18 +1,23 @@
-/*Here we have created Database - DataWarehouse and the three Architectural layers as Schemas namely
-bronze, silver and gold*/
-
+/*
+    This script creates the database 'DataWarehouse' along with three schemas 
+    representing the architectural layers of a modern data warehouse: 
+    bronze (raw data), silver (cleansed data), and gold (aggregated or business-ready data).
+*/
 
 USE master;
 
---Creating the database named DataWarehouse
+-- Create the DataWarehouse database
 CREATE DATABASE DataWarehouse;
 
+-- Switch to the newly created database
 USE DataWarehouse;
 GO
 
---Creating Schemas for the database - DataWarehouse
-CREATE SCHEMA bronze;
+-- Create schemas representing different layers of the data warehouse architecture
+CREATE SCHEMA bronze;  -- Raw data layer
 GO
-CREATE SCHEMA silver;
+
+CREATE SCHEMA silver;  -- Cleansed and transformed data layer
 GO
-CREATE SCHEMA gold
+
+CREATE SCHEMA gold;    -- Aggregated or business-consumable data layer
