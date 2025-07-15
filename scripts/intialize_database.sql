@@ -1,3 +1,7 @@
+/*Here we have created Database - DataWarehouse and the three Architectural layers as Schemas namely
+bronze, silver and gold*/
+
+
 USE master;
 
 --Creating the database named DataWarehouse
