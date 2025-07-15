@@ -9,15 +9,15 @@ USE master;
 -- Create the DataWarehouse database
 CREATE DATABASE DataWarehouse;
 
--- Switch to the newly created database
+
 USE DataWarehouse;
 GO
 
 -- Create schemas representing different layers of the data warehouse architecture
-CREATE SCHEMA bronze;  -- Raw data layer
+CREATE SCHEMA bronze;  
 GO
 
-CREATE SCHEMA silver;  -- Cleansed and transformed data layer
+CREATE SCHEMA silver;  
 GO
 
-CREATE SCHEMA gold;    -- Aggregated or business-consumable data layer
+CREATE SCHEMA gold;    
