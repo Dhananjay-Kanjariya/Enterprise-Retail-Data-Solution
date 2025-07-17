@@ -1,92 +1,100 @@
 /*
-    This script creates cleaned and transformed data (silver layer) tables in the 'silver' schema
-    of the DataWarehouse database. These tables store curated data from the bronze layer (raw CRM and ERP sources).
+    This script creates curated (silver layer) tables in the 'silver' schema
+    of the DataWarehouse database. These tables store cleaned and transformed data
+    sourced from the raw bronze layer (CRM and ERP systems).
 */
 
 USE DataWarehouse;
 GO
 
--- Drop and recreate the CRM customer dimension table
-IF OBJECT_ID('silver.crm_customer_dim', 'U') IS NOT NULL
-    DROP TABLE silver.crm_customer_dim;
+-- Drop and recreate the CRM customer information table (cleaned CRM data)
+IF OBJECT_ID('silver.crm_cust_info', 'U') IS NOT NULL
+    DROP TABLE silver.crm_cust_info;
 GO
 
-CREATE TABLE silver.crm_customer_dim (
-    customer_id        INT,
-    customer_key       NVARCHAR(50),
-    full_name          NVARCHAR(100),
-    marital_status     NVARCHAR(50),
-    gender             NVARCHAR(50),
-    account_created_on DATE
+CREATE TABLE silver.crm_cust_info (
+    cst_id              INT,
+    cst_key             NVARCHAR(50),
+    cst_firstname       NVARCHAR(50),
+    cst_lastname        NVARCHAR(50),
+    cst_marital_status  NVARCHAR(50),
+    cst_gndr            NVARCHAR(50),
+    cst_create_date     DATE,
+	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
 
--- Drop and recreate the CRM product dimension table
-IF OBJECT_ID('silver.crm_product_dim', 'U') IS NOT NULL
-    DROP TABLE silver.crm_product_dim;
+-- Drop and recreate the CRM product information table (cleaned CRM data)
+IF OBJECT_ID('silver.crm_prd_info', 'U') IS NOT NULL
+    DROP TABLE silver.crm_prd_info;
 GO
 
-CREATE TABLE silver.crm_product_dim (
-    product_id       INT,
-    product_key      NVARCHAR(50),
-    product_name     NVARCHAR(50),
-    product_cost     INT,
-    product_line     NVARCHAR(50),
-    product_start_dt DATETIME,
-    product_end_dt   DATETIME
+CREATE TABLE silver.crm_prd_info (
+    prd_id       INT,
+    prd_key      NVARCHAR(50),
+    prd_nm       NVARCHAR(50),
+    prd_cost     INT,
+    prd_line     NVARCHAR(50),
+    prd_start_dt DATETIME,
+    prd_end_dt   DATETIME,
+	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
 
--- Drop and recreate the CRM sales fact table
-IF OBJECT_ID('silver.crm_sales_fact', 'U') IS NOT NULL
-    DROP TABLE silver.crm_sales_fact;
+-- Drop and recreate the CRM sales details table (cleaned CRM data)
+IF OBJECT_ID('silver.crm_sales_details', 'U') IS NOT NULL
+    DROP TABLE silver.crm_sales_details;
 GO
 
-CREATE TABLE silver.crm_sales_fact (
-    order_number NVARCHAR(50),
-    product_key  NVARCHAR(50),
-    customer_id  INT,
-    order_date   INT,
-    ship_date    INT,
-    due_date     INT,
-    sales_amount INT,
-    quantity     INT,
-    unit_price   INT
+CREATE TABLE silver.crm_sales_details (
+    sls_ord_num  NVARCHAR(50),
+    sls_prd_key  NVARCHAR(50),
+    sls_cust_id  INT,
+    sls_order_dt INT,
+    sls_ship_dt  INT,
+    sls_due_dt   INT,
+    sls_sales    INT,
+    sls_quantity INT,
+    sls_price    INT,
+	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
 
--- Drop and recreate the ERP location dimension table
-IF OBJECT_ID('silver.erp_location_dim', 'U') IS NOT NULL
-    DROP TABLE silver.erp_location_dim;
+-- Drop and recreate the ERP location information table (cleaned ERP data)
+IF OBJECT_ID('silver.erp_loc_a101', 'U') IS NOT NULL
+    DROP TABLE silver.erp_loc_a101;
 GO
 
-CREATE TABLE silver.erp_location_dim (
-    customer_id NVARCHAR(50),
-    country     NVARCHAR(50)
+CREATE TABLE silver.erp_loc_a101 (
+    cid    NVARCHAR(50),
+    cntry  NVARCHAR(50),
+	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
 
--- Drop and recreate the ERP customer demographics dimension table
-IF OBJECT_ID('silver.erp_customer_demo_dim', 'U') IS NOT NULL
-    DROP TABLE silver.erp_customer_demo_dim;
+-- Drop and recreate the ERP customer demographics table (cleaned ERP data)
+IF OBJECT_ID('silver.erp_cust_az12', 'U') IS NOT NULL
+    DROP TABLE silver.erp_cust_az12;
 GO
 
-CREATE TABLE silver.erp_customer_demo_dim (
-    customer_id NVARCHAR(50),
-    birth_date  DATE,
-    gender      NVARCHAR(50)
+CREATE TABLE silver.erp_cust_az12 (
+    cid    NVARCHAR(50),
+    bdate  DATE,
+    gen    NVARCHAR(50),
+	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
 
--- Drop and recreate the ERP product category dimension table
-IF OBJECT_ID('silver.erp_product_category_dim', 'U') IS NOT NULL
-    DROP TABLE silver.erp_product_category_dim;
+-- Drop and recreate the ERP product category table (cleaned ERP data)
+IF OBJECT_ID('silver.erp_px_cat_g1v2', 'U') IS NOT NULL
+    DROP TABLE silver.erp_px_cat_g1v2;
 GO
 
-CREATE TABLE silver.erp_product_category_dim (
-    product_id    NVARCHAR(50),
-    category      NVARCHAR(50),
-    subcategory   NVARCHAR(50),
-    maintenance   NVARCHAR(50)
+CREATE TABLE silver.erp_px_cat_g1v2 (
+    id           NVARCHAR(50),
+    cat          NVARCHAR(50),
+    subcat       NVARCHAR(50),
+    maintenance  NVARCHAR(50),
+	dwh_create_date DATETIME2 DEFAULT GETDATE()
 );
 GO
