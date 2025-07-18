@@ -2,8 +2,6 @@
 ===============================================================================
 Enterprise Retail Analytics Summary Report
 ===============================================================================
-Project: Enterprise-Retail-Data-Warehouse-and-Analytics
-Author: Dhananjay Kanjariya
 Purpose:
     This SQL script contains a comprehensive suite of analytics and reporting queries 
     performed on the Gold Layer of the Enterprise Retail Data Warehouse project. 
