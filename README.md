@@ -101,4 +101,4 @@ Analytics SQL queries are run over the gold layer to generate:
 
 ## 🧾 License
 
-This project is for educational and demonstration purposes.
+This project is under MIT License
