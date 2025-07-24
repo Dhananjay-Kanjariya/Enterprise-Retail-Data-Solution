@@ -1,4 +1,4 @@
-# Enterprise Retail Data Warehouse and Analytics
+# Enterprise Retail Data Solution
 
 This project demonstrates a complete data warehousing pipeline for an enterprise retail environment using a star schema model. It includes data integration from CRM and ERP sources, transformation through Bronze and Silver layers, and final curation in the Gold layer for analytics. SQL is used for schema creation, data loading, cleaning, and reporting.
 
