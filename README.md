@@ -13,7 +13,7 @@ This project demonstrates a complete data warehousing pipeline and further analy
 ## 📁 Project Structure
 
 ```
-Enterprise-Retail-Data-Warehouse-and-Analytics/
+Enterprise-Retail-Data-Solution/
 │
 ├── Analytics/
 │   ├── datasets/                      # Extracted from Gold layer views
