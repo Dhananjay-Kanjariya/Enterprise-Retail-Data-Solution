@@ -80,12 +80,13 @@ Analytics SQL queries are run over the gold layer to generate:
 
 ---
 
-## 📷 Data Architecture & Integration
+## 📊 Data Architecture
 
-Images available in `DataWarehouse/docs/`:
+![Data Architecture](DataWarehouse/docs/data_architecture.png)
 
-- `data_architecture.png`: Shows flow from source to gold layer.
-- `data_integration.png`: Depicts CRM and ERP file integration mapping.
+## 🔗 Data Integration
+
+![Data Integration](DataWarehouse/docs/data_integration.png)
 
 ---
 
