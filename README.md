@@ -20,7 +20,7 @@ Enterprise-Retail-Data-Solution/
 │   │   ├── gold.dim_customers.csv
 │   │   ├── gold.dim_products.csv
 │   │   └── gold.fact_sales.csv
-│   ├── docs/
+│   |
 │   └── scripts/
 │       ├── init_database.sql
 │       ├── report_customers.sql
