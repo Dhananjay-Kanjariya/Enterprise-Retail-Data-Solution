@@ -99,6 +99,20 @@ Analytics SQL queries are run over the gold layer to generate:
 
 ---
 
+## 🚀 Future Scope & Improvements
+
+While the current implementation focuses on building a robust data warehouse and performing SQL-based analytics, there are several areas identified for future enhancements:
+
+- **Building Predictive Models:**  
+  Integrating machine learning models for predictive analytics such as forecasting future sales or customer segmentation.  
+  *(Currently not implemented due to data insufficiency.)*
+
+- **Creating Visual Dashboards:**  
+  Developing interactive dashboards using tools like Power BI or Tableau for enhanced data storytelling.  
+  *(Currently not implemented due to data insufficiency.)*
+
+---
+
 ## 🧾 License
 
 This project is under MIT License
