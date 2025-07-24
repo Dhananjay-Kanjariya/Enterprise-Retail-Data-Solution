@@ -4,7 +4,7 @@ This project demonstrates a complete data warehousing pipeline and further analy
 
 ## 🔧 Tech Stack
 
-- SQL (PostgreSQL / MySQL compatible)
+- SQL (PostgreSQL / MySQL compatible). This project uis done with SQL Server
 - Data Warehouse Architecture (Bronze, Silver, Gold layers)
 - Star Schema Modeling
 
